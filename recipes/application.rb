@@ -19,7 +19,7 @@
 
 include_recipe 'java'
 
-application node[:seyren][:application_name] do 
+application node[:seyren][:application_name] do
   path node[:seyren][:application_path]
   repository node[:seyren][:war_uri]
   revision node[:seyren][:application_version]

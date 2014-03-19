@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+  network:
+    - - forwarded_port
+      - guest: 8080
+        host: 8080
+        auto_correct: true
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: opscode-centos-6.4
+    driver_config:
+      box: opscode-centos-6.4
+      box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.4_chef-provisionerless.box
+    run_list:
+      - recipe[apt]
+
+suites:
+  - name: default
+    run_list:
+      - recipe[seyren::default]

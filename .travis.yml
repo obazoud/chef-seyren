@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 1.9.3
+before_install:
+  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+before_script:
+  - bundle exec berks install
+script:
+  - thor test:all
