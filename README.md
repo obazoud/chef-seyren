@@ -1,10 +1,10 @@
 # seyren-cookbook
 
-TODO: Enter the cookbook description here.
+This cookbook is designed to be able to deploy [Seyren](https://github.com/scobal/seyren) application.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Ubuntu, CentOS
 
 ## Attributes
 
@@ -16,10 +16,28 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['seyren']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['seyren']['application_name']</tt></td>
+    <td>String</td>
+    <td>Name of the application</td>
+    <td><tt>seyren</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['application_path']</tt></td>
+    <td>String</td>
+    <td>Location to deploy Seyren</td>
+    <td><tt>/opt/seyren</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['application_version']</tt></td>
+    <td>String</td>
+    <td>Version to deploy</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['war_uri']</tt></td>
+    <td>String</td>
+    <td>URI where the Seyren war is</td>
+    <td></td>
   </tr>
 </table>
 
