@@ -2,6 +2,8 @@
 
 This cookbook is designed to be able to deploy [Seyren](https://github.com/scobal/seyren) application.
 
+[![Build Status](https://travis-ci.org/obazoud/chef-seyren.png)](https://travis-ci.org/obazoud/chef-seyren)
+
 ## Supported Platforms
 
 Ubuntu, CentOS
