@@ -12,6 +12,8 @@ group :test do
 end
 
 group :integration do
-  gem 'test-kitchen', '~> 1.2.1'
-  gem 'kitchen-vagrant', '~> 0.14.0'
+  gem 'net-ssh', '< 2.8.0'
+  gem 'test-kitchen', '1.2.1'
+  gem 'kitchen-vagrant', '0.14.0'
+  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant.git', tag: 'v1.4.3'
 end
