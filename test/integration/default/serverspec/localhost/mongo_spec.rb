@@ -1,3 +1,5 @@
+# -*- mode: ruby; coding: utf-8; -*-
+
 require 'spec_helper'
 
 describe package('mongo-10gen') do

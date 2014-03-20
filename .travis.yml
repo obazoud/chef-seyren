@@ -6,4 +6,4 @@ before_install:
 before_script:
   - bundle exec berks install
 script:
-  - thor test:all
+  - thor tests:all

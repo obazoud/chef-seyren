@@ -1,3 +1,5 @@
+# -*- mode: ruby; coding: utf-8; -*-
+
 require 'spec_helper'
 
 describe port(8080) do

@@ -1,3 +1,4 @@
+# -*- mode: ruby; coding: utf-8; -*-
 source 'https://api.berkshelf.com'
 metadata
 

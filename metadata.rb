@@ -1,3 +1,4 @@
+# -*- mode: ruby; coding: utf-8; -*-
 name             'seyren'
 maintainer       'Olivier Bazoud'
 maintainer_email 'olivier.bazoud@gmail.com'

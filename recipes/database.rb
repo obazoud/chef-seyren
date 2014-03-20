@@ -1,3 +1,4 @@
+# -*- mode: ruby; coding: utf-8; -*-
 #
 # Cookbook Name:: seyren
 # Recipe:: database

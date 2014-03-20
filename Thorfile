@@ -54,7 +54,7 @@ class Style < Thor
   def rubocop
     say 'Run rubocop...', :green
     result = Rubocop::CLI.new.run %W{
-Gemfile Berksfile Vagrantfile metadata.rb #{ __FILE__ } attributes recipes }
+Gemfile Berksfile metadata.rb #{ __FILE__ } attributes recipes }
     if result == 0
       say 'No rubocop errors', :green
     else
@@ -107,12 +107,12 @@ class Integration < Thor
 end
 
 # wrap them all
-class Test < Thor
+class Tests < Thor
   desc 'all', 'Run tests'
   def all
     say 'Run tests...', :green
-    invoke 'test:style:all'
-    invoke 'test:unit:all'
-    invoke 'test:integration:all'
+    invoke 'style:all'
+    invoke 'unit:all'
+    invoke 'integration:all'
   end
 end
