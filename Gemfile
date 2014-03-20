@@ -11,13 +11,7 @@ group :test do
   gem 'rubocop', '0.18.1'
 end
 
-group :vagrant do
-  #gem 'vagrant', github: 'mitchellh/vagrant', tag: 'v1.4.3'
-  gem 'vagrant-berkshelf', github: 'berkshelf/vagrant-berkshelf'
-  gem 'vagrant-omnibus', github: 'schisamo/vagrant-omnibus'
-end
-
 group :integration do
-  gem 'test-kitchen', '1.2.1'
-  gem 'kitchen-vagrant', '0.14.0'
+  gem 'test-kitchen', '~> 1.2.1'
+  gem 'kitchen-vagrant', '~> 0.14.0'
 end

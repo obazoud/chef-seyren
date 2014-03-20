@@ -1,20 +1,19 @@
 ---
 driver:
   name: vagrant
-  network:
-    - - forwarded_port
-      - guest: 8080
-        host: 8080
-        auto_correct: true
 
 provisioner:
   name: chef_solo
 
 platforms:
-  - name: opscode-centos-6.4
+  - name: kitchen-seyren-opscode-centos-6.4
     driver_config:
       box: opscode-centos-6.4
       box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.4_chef-provisionerless.box
+      network:
+        - ["private_network", {ip: '33.33.33.10'}]
+        - ["forwarded_port", {guest: 8080, host: 8080, id: 'seyren', auto_correct: true}]
+
     run_list:
       - recipe[apt]
 
@@ -22,3 +21,14 @@ suites:
   - name: default
     run_list:
       - recipe[seyren::default]
+    attributes:
+      java:
+        install_flavor: "oracle"
+        jdk_version: "7"
+        oracle:
+          accept_oracle_download_terms: true
+      ark:
+        package_dependencies: []
+      tomcat:
+        ssl_enable: false
+        java_options: '-Xmx192M -Djava.awt.headless=true -DSEYREN_LOG_PATH="/var/log/tomcat6/"'

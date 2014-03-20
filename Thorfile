@@ -29,7 +29,7 @@ class Style < Thor
   def knife
     say 'Run knife cookbook tests...', :green
     # check_system 'knife', 'cookbook', 'test', '--verbose', '--config', '.chef/knife.rb'
-    say 'tests disabled!', :cyan
+    say 'Tests disabled :(', :cyan
   end
 
   desc 'foodcritic', 'Run foodcritic cookbook tests'
