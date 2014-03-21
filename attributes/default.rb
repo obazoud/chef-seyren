@@ -20,5 +20,5 @@
 
 default[:seyren][:application_name] = 'seyren'
 default[:seyren][:application_path] = '/opt/seyren'
-default[:seyren][:application_version] = '1.0.0-20140108-1700-43099ba756'
-default[:seyren][:war_uri] = 'http://dl.bintray.com/obazoud/generic/seyren-web-1.0.0-20140108-1700-43099ba756.war'
+default[:seyren][:application_version] = '1.0.0'
+default[:seyren][:war_uri] = 'https://github.com/scobal/seyren/releases/download/1.0.0/seyren-1.0.0.war'
