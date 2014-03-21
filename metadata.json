@@ -1,0 +1,32 @@
+{
+  "name": "seyren",
+  "description": "Installs/Configures seyren",
+  "long_description": "# seyren-cookbook\n\nThis cookbook is designed to be able to deploy [Seyren](https://github.com/scobal/seyren) application.\n\n[![Build Status](https://travis-ci.org/obazoud/chef-seyren.png)](https://travis-ci.org/obazoud/chef-seyren)\n\n## Supported Platforms\n\nUbuntu, CentOS\n\n## Attributes\n\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['seyren']['application_name']</tt></td>\n    <td>String</td>\n    <td>Name of the application</td>\n    <td><tt>seyren</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['seyren']['application_path']</tt></td>\n    <td>String</td>\n    <td>Location to deploy Seyren</td>\n    <td><tt>/opt/seyren</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['seyren']['application_version']</tt></td>\n    <td>String</td>\n    <td>Version to deploy</td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><tt>['seyren']['war_uri']</tt></td>\n    <td>String</td>\n    <td>URI where the Seyren war is</td>\n    <td></td>\n  </tr>\n</table>\n\n## Usage\n\n### seyren::default\n\nInclude `seyren` in your node's `run_list`:\n\n```json\n{\n  \"run_list\": [\n    \"recipe[seyren::default]\"\n  ]\n}\n```\n\n## Contributing\n\n1. Fork the repository on Github\n2. Create a named feature branch (i.e. `add-new-recipe`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request\n\n## License and Authors\n\nAuthor:: Olivier Bazoud (<olivier.bazoud@gmail.com>)\n\nCopyright:: 2014, Olivier Bazoud\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Olivier Bazoud",
+  "maintainer_email": "olivier.bazoud@gmail.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "java": ">= 0.0.0",
+    "application_java": "~> 3.0.0",
+    "mongodb": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}
