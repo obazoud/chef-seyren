@@ -1,5 +1,7 @@
 # -*- mode: ruby; coding: utf-8; -*-
-source 'https://api.berkshelf.com'
+
+site :opscode
+
 metadata
 
 cookbook 'java', git: 'https://github.com/socrata-cookbooks/java'

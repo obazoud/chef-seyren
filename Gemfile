@@ -2,7 +2,9 @@
 
 source 'https://rubygems.org'
 
-gem 'berkshelf', github: 'berkshelf/berkshelf'
+ruby '1.9.3'
+
+gem 'berkshelf', '2.0.10'
 
 group :test do
   gem 'chef', '11.10.4'
@@ -16,4 +18,5 @@ group :integration do
   gem 'test-kitchen', '1.2.1'
   gem 'kitchen-vagrant', '0.14.0'
   gem 'vagrant', git: 'https://github.com/mitchellh/vagrant.git', tag: 'v1.4.3'
+  gem 'faraday', '< 0.9'
 end
