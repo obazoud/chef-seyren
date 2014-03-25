@@ -16,11 +16,13 @@ platforms:
 
     run_list:
       - recipe[apt]
+      - recipe[chef-solo-search]
 
 suites:
   - name: default
     run_list:
       - recipe[seyren::default]
+      - recipe[seyren::mongo-import-data]
     attributes:
       java:
         install_flavor: "oracle"
@@ -31,4 +33,6 @@ suites:
         package_dependencies: []
       tomcat:
         ssl_enable: false
+        keystore_password: 'changeme'
+        truststore_password:q: 'changeme'
         java_options: '-Xmx192M -Djava.awt.headless=true -DSEYREN_LOG_PATH="/var/log/tomcat6/"'

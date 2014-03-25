@@ -22,3 +22,9 @@ default[:seyren][:application_name] = 'seyren'
 default[:seyren][:application_path] = '/opt/seyren'
 default[:seyren][:application_version] = '1.0.0'
 default[:seyren][:war_uri] = 'http://dl.bintray.com/obazoud/generic/seyren-web-1.0.0.war'
+
+default[:seyren][:search] = "*:*"
+
+default[:seyren][:mongo][:db] = 'seyren'
+default[:seyren][:mongo][:collection] = 'checks'
+default[:seyren][:mongo][:file] = "#{node[:seyren][:application_path]}/mongo-import-data.json"

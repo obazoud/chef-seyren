@@ -32,14 +32,38 @@ Ubuntu, CentOS
   <tr>
     <td><tt>['seyren']['application_version']</tt></td>
     <td>String</td>
-    <td>Version to deploy</td>
+    <td>Version to deploy.</td>
     <td></td>
   </tr>
   <tr>
     <td><tt>['seyren']['war_uri']</tt></td>
     <td>String</td>
-    <td>URI where the Seyren war is</td>
-    <td></td>
+    <td>Seyren war location.</td>
+    <td><tt>http://dl.bintray.com/obazoud/generic/seyren-web-1.0.0.war</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['search']</tt></td>
+    <td>String</td>
+    <td>Query to search nodes.</td>
+    <td><tt>*:*</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['mongo']['db']</tt></td>
+    <td>String</td>
+    <td>Database for mongoimport to import data.</td>
+    <td><tt>seyren</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['mongo']['collection']</tt></td>
+    <td>String</td>
+    <td>Collection for mongoimport to import.</td>
+    <td><tt>checks</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['seyren']['mongo']['file']</tt></td>
+    <td>String</td>
+    <td>The location of a file containing the data to import.</td>
+    <td><tt>seyren</tt></td>
   </tr>
 </table>
 
@@ -47,12 +71,28 @@ Ubuntu, CentOS
 
 ### seyren::default
 
+Installation of Seyren application (Tomcat + War) and Mongodb.
+
 Include `seyren` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
     "recipe[seyren::default]"
+  ]
+}
+```
+
+### seyren::mongo-import-data
+
+Generate data to import based on node search.
+
+Include `seyren` in your node's `run_list`:
+
+```json
+{
+  "run_list": [
+    "recipe[seyren::mongo-import-data]"
   ]
 }
 ```

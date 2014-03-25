@@ -14,3 +14,7 @@ describe command('/usr/bin/curl -s -i http://localhost:8080/seyren/') do
     should match /HTTP\/1\.1 200/
   }
 end
+
+describe file('/opt/seyren/mongo-import-data.json') do
+  it { should be_file }
+end
