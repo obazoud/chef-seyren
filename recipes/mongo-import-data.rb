@@ -18,17 +18,20 @@
 # limitations under the License.
 #
 
+search_query = node[:seyren][:search]
+
 db            = node[:seyren][:mongo][:db]
-collection    = node[:seyren][:mongo][:collection]
+col           = node[:seyren][:mongo][:collection]
 file          = node[:seyren][:mongo][:file]
 
-gem_package "bson" do
-  version "2.2.1"
+gem_package 'bson' do
+  version '2.2.1'
   action :install
 end
 
-execute "run-mongoimport-seyren" do
-  command "mongo #{db} --eval \"db.#{collection}.remove()\" && mongoimport --db #{db} --collection #{collection} --file #{file} --type json --upsert --upsertFields name"
+execute 'run-mongoimport-seyren' do
+  command "mongo #{db} --eval \"db.#{col}.remove()\" \
+          && mongoimport --db #{db} --collection #{col} --file #{file} --type json --upsert --upsertFields name"
   action :nothing
 end
 
@@ -39,24 +42,22 @@ end
 if Chef::Config[:solo]
   hosts = [node]
 else
-  hosts = search(:node, "roles:*")
+  hosts = search(:node, search_query)
 end
 
 Chef::Log.debug("Found #{hosts}")
 
-template "#{file}" do
-  source "mongo-import-data.json.erb"
-  owner "root"
-  group "root"
+template file do
+  source 'mongo-import-data.json.erb'
+  owner 'root'
+  group 'root'
   mode 0644
   variables(
-    :hosts => hosts,
-    :hostname => node[:hostname],
-    :fqdn => node[:fqdn]
+    hosts: hosts
   )
-  notifies :run, "execute[run-mongoimport-seyren]", :immediately
+  notifies :run, 'execute[run-mongoimport-seyren]', :immediately
 end
 
-ruby_block "remove_recipe_seyren_mongo_import_data" do
-  block { node.run_list.remove("recipe[seyren::mongo-import-data]") }
+ruby_block 'remove_recipe_seyren_mongo_import_data' do
+  block { node.run_list.remove('recipe[seyren::mongo-import-data]') }
 end
