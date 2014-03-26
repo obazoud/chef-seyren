@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-include_recipe 'seyren::application'
 include_recipe 'seyren::database'
+include_recipe 'seyren::application'

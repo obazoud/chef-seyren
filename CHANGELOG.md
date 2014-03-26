@@ -1,8 +1,9 @@
 # seyren cookbook CHANGELOG
 This file is used to list changes made in each version of the seyren cookbook.
 
-## v0.3.0 (2014-03-24)
+## v0.3.0 (2014-03-26)
 - Add seyren::mongo-import-data recipe.
+- Install mongodb before seyren
 
 ## v0.2.0 (2014-03-24)
 - Change war uri to bintray. Chef has some probleme with github's redirect.
