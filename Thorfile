@@ -2,7 +2,6 @@
 
 require 'bundler'
 require 'bundler/setup'
-require 'berkshelf/thor'
 
 require 'foodcritic'
 require 'rubocop'
@@ -28,8 +27,7 @@ class Style < Thor
   desc 'knife', 'Run knife cookbook tests'
   def knife
     say 'Run knife cookbook tests...', :green
-    # check_system 'knife', 'cookbook', 'test', '--verbose', '--config', '.chef/knife.rb'
-    say 'Tests disabled :(', :cyan
+    check_system 'knife', 'cookbook', 'test', '--all', '--config', '.chef/knife.rb'
   end
 
   desc 'foodcritic', 'Run foodcritic cookbook tests'
@@ -53,15 +51,7 @@ class Style < Thor
   desc 'rubocop', 'Run rubocop on all Ruby files'
   def rubocop
     say 'Run rubocop...', :green
-    result = Rubocop::CLI.new.run %W{
-Gemfile Berksfile metadata.rb #{ __FILE__ } attributes recipes }
-    if result == 0
-      say 'No rubocop errors', :green
-    else
-      say ''
-      say 'rubocop errors found!', :red
-      exit result
-    end
+    check_system 'rubocop', 'Gemfile', 'Berksfile', 'metadata.rb', 'attributes', 'providers', 'recipes', 'templates', "#{ __FILE__ }"
   end
 
   desc 'all', 'Run all style on cookbooks'

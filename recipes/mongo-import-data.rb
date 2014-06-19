@@ -1,5 +1,5 @@
 # -*- mode: ruby; coding: utf-8; -*-
-#
+
 # Cookbook Name:: seyren
 # Recipe:: mongo-import-data
 # Author:: Olivier Bazoud (<olivier.bazoud@gmail.com>)
