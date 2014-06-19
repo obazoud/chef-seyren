@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: kitchen-seyren-opscode-centos-6.4
@@ -16,7 +16,6 @@ platforms:
 
     run_list:
       - recipe[apt]
-      - recipe[chef-solo-search]
 
 suites:
   - name: default
