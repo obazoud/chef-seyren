@@ -51,7 +51,7 @@ class Style < Thor
   desc 'rubocop', 'Run rubocop on all Ruby files'
   def rubocop
     say 'Run rubocop...', :green
-    check_system 'rubocop', 'Gemfile', 'Berksfile', 'metadata.rb', 'attributes', 'providers', 'recipes', 'templates', "#{ __FILE__ }"
+    check_system 'rubocop', 'Gemfile', 'Berksfile', 'metadata.rb', 'attributes', 'recipes', 'templates', "#{ __FILE__ }"
   end
 
   desc 'all', 'Run all style on cookbooks'
