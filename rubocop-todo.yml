@@ -12,5 +12,5 @@ LineLength:
 MethodLength:
   Max: 15
 
-Style/FileName
+Style/FileName:
   Enabled: False
