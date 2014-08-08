@@ -11,3 +11,6 @@ LineLength:
 # Configuration parameters: CountComments.
 MethodLength:
   Max: 15
+
+Style/FileName
+  Enabled: False
